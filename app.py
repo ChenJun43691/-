@@ -99,7 +99,7 @@ rfModel_age.fit(remove_outlier[ageColumns], remove_outlier["Age"])
 ageNullValues = rfModel_age.predict(dataAgeNull[ageColumns])
 dataAgeNull.loc[:, "Age"] = ageNullValues
 
-# ⚠ append() 被棄用，改用 pd.concat()
+# append() 被棄用，改用 pd.concat()
 data = pd.concat([dataAgeNull, dataAgeNotNull], ignore_index=True)
 
 # 拆分 train 和 test分割訓練集和測試集
